@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+		  <div class="pull-right">
+
+		  </div>
+      <h1>Post</h1> 
+    </div>
+  </div>
+</nav>
+<div class="panel-body">
+	<div class="panel panel-primary">
+    <div class="panel-heading">
+			<h3><strong>Title:  </strong><%= @post.title %></h3>
+			<h5><strong>Author:  </strong><%= @post.author %></h5>
+		</div>
+		<div class="panel-body">
+			<p><%= @post.blog_entry %></p>
+			<p><button type="button" class="btn btn-warning"><%= link_to 'Edit Post', edit_post_path(@post) %></button></p>
+			<h4>Comments:</h4>
+			<% @comments.each do |comment|  %>
+				<% if comment.post_id == @post.id %>
+				  <div class="panel-body">
+		        <p><strong><%= comment.author %></strong> said...</p>
+		        <p><%= comment.comment_entry %></p>
+		        <button type="button" class="btn btn-success"><%= link_to 'Show', comment %></button>
+		      </div>
+				<% end %>
+			<% end %>
+		</div>
+		<div class="panel-footer">
+			<div id="comments">
+				<%= render 'comments/form', comment: @comment %>
+			</div>
+			<button type="button" class="btn btn-success"><%= link_to 'Back', posts_path %></button>
+		</div>
+	</div>
+</div>
+

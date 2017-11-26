@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+		  <div class="pull-right">
+
+		  </div>
+			<h1>Editing Comment</h1>
+    </div>
+  </div>
+</nav>
+<div class="panel panel-primary">
+  <div class="panel-heading"><h3>Post: <%= @comment.post.title %></h3></div>
+	<%= render 'comments/form.edit', comment: @comment %>
+</div>
+<button type="button" class="btn btn-primary"><%= link_to 'Show', @comment %></button>
+<button type="button" class="btn btn-success"><%= link_to 'Post', post_path(@comment.post_id) %></button>
+<button type="button" class="btn btn-danger"><%= link_to 'Destroy', @comment, method: :delete, data: { confirm: 'Are you sure?' } %></button>

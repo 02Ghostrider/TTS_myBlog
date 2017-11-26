@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+		  <div class="pull-right">
+
+		  </div>
+			<h1>New Comment</h1>
+    </div>
+  </div>
+</nav>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  	<h3>Post: </h3>
+  </div>
+	<%= render 'comments/form' %>
+</div>
+<button type="button" class="btn btn-success"><%= link_to 'Back', comments_path %></button>

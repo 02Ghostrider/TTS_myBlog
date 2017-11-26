@@ -1,0 +1,16 @@
+	<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <div class="pull-right">
+
+        </div>
+        <h1>New Post</h1>
+      </div>
+    </div>
+  </nav>
+	<div class="panel panel-primary">
+    <div class="panel-heading"></div>
+		<%= render 'form', post: @post %>
+	</div>
+
+<button type="button" class="btn btn-success"><%= link_to 'Back', posts_path %></button>

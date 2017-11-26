@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="pull-right">
+
+      </div>
+      <h1>Listing Comments</h1>
+    </div>
+  </div>
+</nav>
+<div class="panel-body">
+  <% @comments.each do |comment| %>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h4>Post Title: <%= comment.post.title %></h4>
+        Comment by: <strong><%= comment.author %></strong>
+      </div>
+      <div class="panel-body">        
+        <%= comment.comment_entry %>
+      </div>
+      <div class="panel-footer">
+      <button type="button" class="btn btn-success">        <%= link_to 'Show', comment %></button>
+      <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_comment_path(comment) %></button>
+      <button type="button" class="btn btn-danger"><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+      </div>
+    </div>
+  <% end %>    
+</div>
+

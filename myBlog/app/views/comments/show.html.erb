@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+		  <div class="pull-right">
+
+		  </div>
+			<h1>Comment</h1>
+    </div>
+  </div>
+</nav>
+<div class="panel panel-primary">
+  <div class="panel-heading"><h3>Post: <%= @comment.post.title %></h3></div>
+  <div class="panel-body">
+		<p><strong>Author:</strong><%= @comment.author %></p>
+		<p><strong>Comment entry:</strong><%= @comment.comment_entry %></p>
+	</div>
+</div>
+<div class="panel-footer">
+	<button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_comment_path(@comment) %></button>
+	<button type="button" class="btn btn-success"><%= link_to 'Back', post_path(@comment.post_id) %></button>
+</div>
