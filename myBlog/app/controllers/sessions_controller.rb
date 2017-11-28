@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-	
+
 	def register
 		@user = User.create(user_params)
 		if @user.valid?
@@ -11,12 +11,12 @@ class SessionsController < ApplicationController
 	end
 
   def login
-  	@user = User.find_by_email(params[:email])
+  	@user = User.find_by_username(params[:username])
   	if @user && @user.authenticate(params[:password])
   		session[:user_id] = @user.id
   		redirect_to "/users/#{@user.id}/show"
   	else
-  		render json: "Login information  notvalid"
+  		render json: "Login information notvalid"
   	end
   end
 

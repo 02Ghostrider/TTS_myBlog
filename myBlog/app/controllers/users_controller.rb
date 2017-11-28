@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	before_action :check_session
+  
   def index
   end
 
@@ -7,11 +8,11 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(params[:id])
+  	@users = User.find(params[:id])
   end
 
   def update
-  	@user = User.find(params[:id])
+  	@users = User.find(params[:id])
   end
 
   private

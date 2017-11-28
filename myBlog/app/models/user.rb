@@ -8,6 +8,9 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: EMAIL_REGEX }
   validates :username, presence: true, uniqueness: { case_sensitive: false }
 
+  has_many :posts
+  has_many :comments
+
   before_save :email_lowercase
 
   def email_lowercase
